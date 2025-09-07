@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import assets from '../assets/assets';
+import { AuthContext } from '../../context/AuthContext';
 
 const LoginPage = () => {
 	const [currState, setCurrState] = useState('Sign up');
@@ -9,6 +10,8 @@ const LoginPage = () => {
 	const [bio, setBio] = useState('');
 	const [isDataSubmitted, setIsDataSubmitted] = useState(false);
 
+	const { login } = useContext(AuthContext);
+
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
 
@@ -16,6 +19,8 @@ const LoginPage = () => {
 			setIsDataSubmitted(true);
 			return;
 		}
+
+		login(currState === 'Sign up' ? 'signup' : 'login', { fullName, email, password, bio });
 	};
 
 	return (
@@ -45,7 +50,7 @@ const LoginPage = () => {
 						onChange={(e) => setFullName(e.target.value)}
 						value={fullName}
 						type="text"
-						className="p-2 border border-gray-500 rounded-md focus:outline-none "
+						className="p-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
 						placeholder="Full Name"
 						required
 					/>
@@ -59,7 +64,7 @@ const LoginPage = () => {
 							type="email"
 							placeholder="Email Address"
 							required
-							className="p-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigi-500"
+							className="p-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
 						/>
 						<input
 							onChange={(e) => setPassword(e.target.value)}
@@ -67,7 +72,7 @@ const LoginPage = () => {
 							type="password"
 							placeholder="Password"
 							required
-							className="p-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigi-500"
+							className="p-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
 						/>
 					</>
 				)}
