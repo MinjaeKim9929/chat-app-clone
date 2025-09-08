@@ -211,7 +211,7 @@ chat-app-clone/
 
 ## 🙏 Acknowledgements
 
-- [GreatStack Youtube] (https://www.youtube.com/@GreatStackDev/) - For the great tutorial and inspiration
+- [GreatStack Youtube](https://www.youtube.com/@GreatStackDev/) - For the great tutorial and inspiration
 - [React](https://reactjs.org/) - The amazing UI library
 - [Tailwind CSS](https://tailwindcss.com/) - For the beautiful styling system
 - [Socket.IO](https://socket.io/) - For real-time communication
