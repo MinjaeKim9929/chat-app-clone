@@ -201,10 +201,10 @@ chat-app-clone/
 ├── server/                # Node.js backend
 │   ├── controllers/       # Route controllers (to be implemented)
 │   ├── middleware/        # Custom middleware (to be implemented)
-│   ├── models/           # MongoDB models (to be implemented)
-│   ├── routes/           # API routes (to be implemented)
-│   ├── utils/            # Utility functions (to be implemented)
-│   ├── server.js         # Main server file
+│   ├── models/            # MongoDB models (to be implemented)
+│   ├── routes/            # API routes (to be implemented)
+│   ├── utils/             # Utility functions (to be implemented)
+│   ├── server.js          # Main server file
 │   └── package.json
 └── README.md
 ```
