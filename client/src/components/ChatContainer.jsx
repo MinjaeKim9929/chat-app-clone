@@ -21,7 +21,7 @@ const ChatContainer = () => {
 
 	// Handle sending an image
 	const handleSendImage = async (e) => {
-		const file = e.target.file[0];
+		const file = e.target.files[0];
 		if (!file || !file.type.startsWith('image/')) {
 			toast.error('select an image file');
 			return;
@@ -57,8 +57,7 @@ const ChatContainer = () => {
 				<p className="flex-1 text-lg text-white flex items-center gap-2">
 					{selectedUser.fullName}
 
-					{onlineUsers.includes(selectedUser._id)}
-					<span className="w-2 h-2 rounded-full bg-green-500"></span>
+					{onlineUsers.includes(selectedUser._id) && <span className="w-2 h-2 rounded-full bg-green-500"></span>}
 				</p>
 				<img onClick={() => setSelectedUser(null)} src={assets.arrow_icon} alt="" className="md:hidden max-w-7" />
 				<img src={assets.help_icon} alt="" className="max-md:hidden max-w-5" />
